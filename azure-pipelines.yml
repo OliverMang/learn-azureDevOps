@@ -59,7 +59,7 @@ stages:
       - task: PublishBuildArtifacts@1
         inputs:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-          ArtifactName: 'webApp'
+          ArtifactName: 'WebApp'
           publishLocation: 'Container'
 - stage: TestDeployStage
   displayName: 'Test Deployment'
@@ -75,7 +75,7 @@ stages:
             inputs:
               ConnectionType: 'AzureRM'
               azureSubscription: 'Workshop App Connection'
-              appType: 'webApp'
+              appType: 'WebApp'
               WebAppName: 'czy1oman-buildstuff-2'
               packageForLinux: '$(Pipeline.Workspace)/webApp/learn-azuredevops.zip'
 - stage: ProdDeployStage
@@ -95,6 +95,6 @@ stages:
             inputs:
               ConnectionType: 'AzureRM'
               azureSubscription: 'Workshop App Connection'
-              appType: 'webApp'
+              appType: 'WebApp'
               WebAppName: 'czy1oman-buildstuff-2'
               packageForLinux: '$(Pipeline.Workspace)/webApp/learn-azuredevops.zip'
