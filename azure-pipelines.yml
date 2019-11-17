@@ -79,3 +79,23 @@ stages:
               appType: 'webApp'
               WebAppName: 'czy1oman-buildstuff-2'
               packageForLinux: '$(System.DefaultWorkingDirectory)/_Classic Pipeline/WebApp/learn-azuredevops.zip'
+- stage: ProdDeployStage
+  displayName: 'Prod Deployment'
+  dependsOn:
+  - BuildStage
+  condition: "and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))"
+  jobs:
+  - deployment: Deploy
+    displayName: 'Deployment'
+    environment: 'azureDevOpsWorkshop-prod'
+    strategy:
+     runOnce:
+       deploy:
+         steps:
+          - task: AzureRmWebAppDeployment@4
+            inputs:
+              ConnectionType: 'AzureRM'
+              azureSubscription: 'Workshop App Connection'
+              appType: 'webApp'
+              WebAppName: 'czy1oman-buildstuff-2'
+              packageForLinux: '$(System.DefaultWorkingDirectory)/_Classic Pipeline/WebApp/learn-azuredevops.zip'
