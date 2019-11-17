@@ -78,7 +78,7 @@ stages:
               azureSubscription: 'Workshop App Connection'
               appType: 'webApp'
               WebAppName: 'czy1oman-buildstuff-2'
-              packageForLinux: '$(System.DefaultWorkingDirectory)/_Classic Pipeline/WebApp/learn-azuredevops.zip'
+              packageForLinux: '$(Pipeline.Workspace)/webApp/learn-azuredevops.zip'
 - stage: ProdDeployStage
   displayName: 'Prod Deployment'
   dependsOn:
@@ -98,4 +98,4 @@ stages:
               azureSubscription: 'Workshop App Connection'
               appType: 'webApp'
               WebAppName: 'czy1oman-buildstuff-2'
-              packageForLinux: '$(System.DefaultWorkingDirectory)/_Classic Pipeline/WebApp/learn-azuredevops.zip'
+              packageForLinux: '$(Pipeline.Workspace)/webApp/learn-azuredevops.zip'
