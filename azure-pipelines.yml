@@ -67,6 +67,7 @@ stages:
   jobs:
   - deployment: Deploy
     displayName: 'Deployment'
+    environment: 'azureDevOpsWorkshop-dev'
     strategy:
      runOnce:
        deploy:
