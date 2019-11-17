@@ -1,5 +1,7 @@
 # Azure DevOps Workshop
 
+[![Build status](https://dev.azure.com/olivermang/buildstuff_ws_1/_apis/build/status/Classic%20Pipeline)](https://dev.azure.com/olivermang/buildstuff_ws_1/_build/latest?definitionId=1)
+
 ## Prerequisites
 
 ### Git & GitHub Account
