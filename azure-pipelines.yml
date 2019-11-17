@@ -60,7 +60,7 @@ stages:
         inputs:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)'
           ArtifactName: 'WebApp'
-          publishLocation: 'Container'
+          publishLocation: Container
 - stage: TestDeployStage
   displayName: 'Test Deployment'
   jobs:
