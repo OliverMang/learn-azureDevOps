@@ -4,8 +4,24 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
+ batch: false
+ branches:
+   include:
+     - "*"
 
+pr:
+ branches:
+   include:
+     - "*"
+
+schedules:
+  - cron: 0 2 * * *
+    always: true
+    branches:
+      include:
+        - master
+    displayName: "1am CET UTC+1"
+    
 pool:
   vmImage: 'ubuntu-latest'
 
